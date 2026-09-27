@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Healthy Together Initiative</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: green;
+      color: #222;
+    }
+
+    /* TOP GREEN SECTION */
+    .top {
+      height: 25vh;
+      background: green;
+      position: relative;
+    }
+
+    /* MENU BUTTON */
+    .menu {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      background: white;
+      color: green;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* MENU BOX */
+    .menu-box {
+      display: none;
+      position: absolute;
+      top: 80px;
+      right: 25px;
+      width: 220px;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .menu-box button {
+      width: 100%;
+      padding: 14px;
+      margin: 4px 0;
+      border: none;
+      background: white;
+      color: green;
+      text-align: left;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .menu-box button:hover {
+      background: #eeeeee;
+    }
+
+    /* WHITE MIDDLE SECTION */
+    .middle {
+      min-height: 50vh;
+      background: white;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: green;
+      font-size: 45px;
+      line-height: 1.2;
+      margin-bottom: 45px;
+    }
+
+    /* EXPLORE BUTTON */
+    .explore {
+      background: green;
+      color: white;
+      border: none;
+      padding: 18px 45px;
+      border-radius: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* BOTTOM GREEN SECTION */
+    .bottom {
+      height: 25vh;
+      background: green;
+    }
+
+    /* INFORMATION SECTION */
+    .info {
+      display: none;
+      background: white;
+      padding: 35px 25px;
+      line-height: 1.7;
+    }
+
+    .info h2 {
+      color: green;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .info h3 {
+      color: green;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .info p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .info ul {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .info li {
+      margin-bottom: 10px;
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+      background: green;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .explore {
+        font-size: 22px;
+        padding: 16px 38px;
+      }
+
+      .menu {
+        font-size: 16px;
+      }
+
+      .info {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP -->
+  <section class="top">
+
+    <button class="menu" onclick="openMenu()">
+      MENU
+    </button>
+
+    <!-- MENU OPTIONS -->
+    <div class="menu-box" id="menuBox">
+
+      <button onclick="showAbout()">
+        1. About Us
+      </button>
+
+      <button onclick="showContact()">
+        2. Contact Us
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOMEPAGE -->
+  <main class="middle" id="home">
+
+    <h1>
+      Welcome to<br>
+      Healthy Together Initiative
+    </h1>
+
+    <button class="explore">
+      EXPLORE
+    </button>
+
+  </main>
+
+
+  <!-- ABOUT US -->
+  <section class="info" id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+      Healthy Together Initiative is a non-governmental organization
+      focused on public health awareness, disease prevention, and
+      capacity-building for healthcare workers.
+    </p>
+
+    <h3>Core Mission & Vision</h3>
+
+    <p>
+      <strong>Promoting Healthcare Capacity:</strong>
+      Focuses on strengthening primary and secondary healthcare delivery
+      through continuous education, sensitization, and training workshops
+      for clinical staff.
+    </p>
+
+    <p>
+      <strong>Community & Hospital Safety:</strong>
+      Aims to reduce preventable healthcare-associated illnesses and foster
+      safer clinical environments for both patients and healthcare providers.
+    </p>
+
+    <h3>Key Programs & Training Focus Areas</h3>
+
+    <p>
+      <strong>Hospital-Acquired Infection (HAI) Prevention:</strong>
+      Conducts specialized training sessions, such as the One Day
+      Sensitization Training for Nurses on Nosocomial Infections in Hospitals.
+    </p>
+
+    <p>
+      <strong>Nosocomial Infection Control:</strong>
+      Educates medical staff on:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Sources & Transmission:</strong>
+        Identifying vectors, cross-contamination risks, and environmental
+        reservoirs of pathogens within hospital wards.
+      </li>
+
+      <li>
+        <strong>Prevention & Control Strategies:</strong>
+        Teaching standard precautions, hand hygiene protocols, sterilization
+        techniques, and effective barrier nursing practices.
+      </li>
+
+      <li>
+        <strong>Clinical Causes & Pathways:</strong>
+        Addressing specific causes of infections linked to invasive devices,
+        surgical procedures, and prolonged hospitalization.
+      </li>
+    </ul>
+
+    <h3>Organizational Highlights</h3>
+
+    <p>
+      <strong>Interactive Field Workshops:</strong>
+      Employs visual learning materials, instructional banners, and
+      structured modules to engage healthcare workers directly in
+      clinical settings.
+    </p>
+
+    <p>
+      <strong>Interprofessional Collaboration:</strong>
+      Coordinates with local health facilities, nursing staff, and public
+      health practitioners to build sustainable infection-control routines.
+    </p>
+
+    <button class="close-btn" onclick="goHome()">
+      Back to Home
+    </button>
+
+  </section>
+
+
+  <!-- CONTACT US -->
+  <section class="info" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <h3>HEALTHY TOGETHER INITIATIVE</h3>
+
+    <p>
+      <strong>Advancing Health. Empowering Communities.
+      Preserving the Future.</strong>
+    </p>
+
+    <p>
+      Registered Incorporated Trustees (RC: 7699662)
+    </p>
+
+    <h3>Who We Are</h3>
+
+    <p>
+      Healthy Together Initiative is a non-profit, non-political
+      organization committed to creating equitable, accessible healthcare
+      systems and social support networks for underserved populations.
+    </p>
+
+    <h3>Our Address</h3>
+
+    <p>
+      House No. C3A, Valley View Estate,<br>
+      Apo Dutse, FCT, Nigeria
+    </p>
+
+    <h3>Our Core Pillars</h3>
+
+    <p>
+      <strong>Public Health & AMR Outreach:</strong>
+      Monitoring antimicrobial resistance and educating local populations
+      to combat the threat of antibiotic-resistant pathogens.
+    </p>
+
+    <p>
+      <strong>Community Infectious Disease Prevention:</strong>
+      Executing field-level awareness programs to halt the spread of
+      infectious illnesses.
+    </p>
+
+    <p>
+      <strong>Youth & Adolescent Health Services:</strong>
+      Designing specialized, accessible programs to meet the unique
+      healthcare needs of adolescents.
+    </p>
+
+    <p>
+      <strong>Food Security Initiatives:</strong>
+      Building community-level food networks to combat hunger and improve
+      local nutrition.
+    </p>
+
+    <h3>Partner With Us</h3>
+
+    <p>
+      We collaborate with government agencies, international donors,
+      research institutions, and local stakeholders to implement
+      high-impact public health solutions.
+    </p>
+
+    <button class="close-btn" onclick="goHome()">
+      Back to Home
+    </button>
+
+  </section>
+
+
+  <!-- BOTTOM GREEN -->
+  <section class="bottom"></section>
+
+
+  <script>
+
+    function openMenu() {
+      const menu = document.getElementById("menuBox");
+
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+
+
+    function hideAll() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("about").style.display = "none";
+      document.getElementById("contact").style.display = "none";
+      document.getElementById("menuBox").style.display = "none";
+    }
+
+
+    function showAbout() {
+      hideAll();
+      document.getElementById("about").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+
+    function showContact() {
+      hideAll();
+      document.getElementById("contact").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+
+    function goHome() {
+      document.getElementById("about").style.display = "none";
+      document.getElementById("contact").style.display = "none";
+      document.getElementById("home").style.display = "flex";
+      
+
+      window.scrollTo(0, 0);
+    }
+
+  </script>
+
+</body>
+</html>
+
